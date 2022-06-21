@@ -18,10 +18,8 @@
 // * Chiedo all'utente i km e la sua età
 
 const tripChoice = parseInt(prompt('Quanti km vuoi percorrere?'));
-console.log(tripChoice);
 
 const userAge = parseInt(prompt('Quanti anni hai?'));
-console.log(userAge);
 
 
 // * Validazione
@@ -32,20 +30,21 @@ if (isNaN(tripChoice) || isNaN(userAge) || tripChoice === 0 || userAge === 0) {
 
 // * Calcolo il prezzo standard del viaggio
 
-const ticketPrice = parseInt(tripChoice * 0.21);
-console.log(ticketPrice);
+let ticketPrice = parseInt(tripChoice * 0.21);
 
 // * Calcolo le variabili di prezzo per gli sconti
 
 if (userAge <= 17) {
-    console.log((ticketPrice * 0.8));
+    ticketPrice = ticketPrice * 0.8;
 }
 
 else if (userAge >= 66) {
-    console.log((ticketPrice * 0.6));
+    ticketPrice = ticketPrice * 0.6;
 }
+
+let priceDisplay = ticketPrice.toFixed(2);
     
     
 // * Collego il paragrafo 
     
-document.getElementById('final-price').innerText = 'Il prezzo della tua soluzione di viaggio è di € ' +  ticketPrice;
+document.getElementById('final-price').innerText = 'Il prezzo della tua soluzione di viaggio è di € ' +  priceDisplay;
