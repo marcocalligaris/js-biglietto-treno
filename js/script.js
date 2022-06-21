@@ -38,7 +38,7 @@ console.log(ticketPrice);
 // * Calcolo le variabili di prezzo per gli sconti
 
 if (userAge <= 17) {
-    (ticketPrice * 0.8);
+    console.log((ticketPrice * 0.8));
 }
 
 else if (userAge >= 66) {
